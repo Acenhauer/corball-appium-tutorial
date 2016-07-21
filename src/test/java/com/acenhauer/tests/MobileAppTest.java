@@ -63,10 +63,10 @@ public class MobileAppTest {
         // switch between diffrent browsers, e.g. iOS Safari or Android Chrome
         // let's use the os name to differentiate, because we only use default browser in that os
         if (device != null && device.equalsIgnoreCase("Android")) {
-            File appDir = new File("/Users/guillem/code/acenhauer/appiumtutorial/src/test/resources");
+            File appDir = new File("src/test/resources");
             File app = new File(appDir, "SimpleCalculator.apk");
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("deviceName","ZY222W6DMS");
+            capabilities.setCapability("deviceName","Android Emulator");
             capabilities.setCapability("deviceType","phone");
             capabilities.setCapability("deviceOrientation", "portrait");
             capabilities.setCapability("browserName", "");
@@ -76,7 +76,7 @@ public class MobileAppTest {
             driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         } else {
-            File appDir = new File("/Users/guillem/code/acenhauer/appiumtutorial/src/test/resources");
+            File appDir = new File("src/test/resources");
             File app = new File(appDir, "Calculator.app");
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("appiumVersion", "1.5.3");
